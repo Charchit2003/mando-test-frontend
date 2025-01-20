@@ -1,0 +1,127 @@
+{
+    "category" : [
+        {
+            "id": "1",
+            "title": "Chain",
+            "description": "Chain is worn by both women and men. Achieve Authentic fashion at your doorstep.",
+            "tags": [
+              "wedding",
+              "women",
+              "men"
+            ],
+            "thumbnail": "https://static.vecteezy.com/system/resources/previews/034/781/723/non_2x/ai-generated-beautiful-and-elegant-woman-gold-jewellery-necklace-photo.jpeg"
+        },
+        {
+            "id": "2",
+            "title": "Rings",
+            "description": "Chain is worn by both women and men. Achieve Authentic fashion at your doorstep.",
+            "tags": [
+                "wedding",
+                "women",
+                "men",
+                "engagement"
+            ],
+            "thumbnail": "https://static.vecteezy.com/system/resources/previews/038/000/334/non_2x/ai-generated-beautiful-gold-ring-with-a-diamond-in-the-shape-of-a-heart-photo.jpg"
+        },
+        {
+            "id": "3",
+            "title": "Rings",
+            "description": "Chain is worn by both women and men. Achieve Authentic fashion at your doorstep.",
+            "tags": [
+              "wedding",
+              "women",
+              "men",
+              "engagement"
+            ],
+            "thumbnail": "https://static.vecteezy.com/system/resources/previews/038/000/334/non_2x/ai-generated-beautiful-gold-ring-with-a-diamond-in-the-shape-of-a-heart-photo.jpg"
+        },
+        {
+            "id": "4",
+            "title": "Chain",
+            "description": "Chain is worn by both women and men. Achieve Authentic fashion at your doorstep.",
+            "tags": [
+              "wedding",
+              "women",
+              "men"
+            ],
+            "thumbnail": "https://static.vecteezy.com/system/resources/previews/034/781/723/non_2x/ai-generated-beautiful-and-elegant-woman-gold-jewellery-necklace-photo.jpeg"
+        }
+    ],
+    "shops" :[
+        {
+            "id" : "1",
+            "user_id" : "1",
+            "username" : "P_Finance",
+            "shopname" : "Paharia Finanace",
+            "description" : "Paharia Finance is a leading jewellery brand for selling and gold at scale.",
+            "locations" : [
+                {
+                    "address_id" : "1",
+                    "address" : "pattamangalam Street, plot-52",
+                    "city" : "Mayiladuthurai",
+                    "pin-code" : "305801",
+                    "state" : "Tamil Nadu"
+                }
+            ],
+            "website" : "www.paharia_finance.com",
+            "facebook" : "",
+            "instagram" : "",
+            "twitter" : "" 
+        }
+    ],
+    "users" :[
+        {
+            "id": "66f3",
+            "email": "charchitpaharia@gmail.com",
+            "password": "Char@123",
+            "role": "admin",
+            "addresses": [
+                {
+                "name": "Char",
+                "email": "charchitpaharia@gmail.com",
+                "phone": "6375685054",
+                "street": "Aaradhyam, Parvati Vihar Colony, Jaipur Road",
+                "city": "Kishangarh",
+                "state": "Rajasthan",
+                "pinCode": "305801"
+                }
+            ]
+        },
+        {
+            "id": "66f4",
+            "email": "ch21b024@smail.iitm.ac.in",
+            "password": "Char@123",
+            "role": "user",
+            "addresses": [
+                {
+                "name": "Char",
+                "email": "charchitpaharia@gmail.com",
+                "phone": "6375685054",
+                "street": "Aaradhyam, Parvati Vihar Colony, Jaipur Road",
+                "city": "Kishangarh",
+                "state": "Rajasthan",
+                "pinCode": "305801"
+                }
+            ]
+        }
+    ],
+    "products" : [
+        {
+            "id" : "1",
+            "category_id" : "1",
+            "shop_id" :"1",
+            "user_id" :"1",
+            "images" : [
+                "df",
+                "dlfl",
+                "dfdf"
+            ],
+            "purity" : "92",
+            "making_touch" : "5",
+            "total_weight" : "5",
+            "gold_weight" : "4.5",
+            "min_quantity" : "2",
+            "max_quantity" : "10"
+        }
+    ]
+}
