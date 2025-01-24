@@ -50,20 +50,23 @@ export default function CategoryDetails() {
       "shopname" : "Paharia Finanace",
       "description" : "Paharia Finance is a leading jewellery brand for selling and gold at scale.",
       "locations" : [
-          {
-              "address_id" : "1",
-              "address" : "pattamangalam Street, plot-52",
-              "city" : "Mayiladuthurai",
-              "pin-code" : "305801",
-              "state" : "Tamil Nadu"
-          }
+        {
+          "address_id" : "1",
+          "address" : "pattamangalam Street, plot-52",
+          "city" : "Mayiladuthurai",
+          "pin-code" : "305801",
+          "state" : "Tamil Nadu"
+        }
       ],
-      "thumbnail": "https://static.vecteezy.com/system/resources/previews/034/781/723/non_2x/ai-generated-beautiful-and-elegant-woman-gold-jewellery-necklace-photo.jpeg",
+      "categories" : [
+        "5", "10"
+      ],
+      "logo": "https://static.vecteezy.com/system/resources/previews/034/781/723/non_2x/ai-generated-beautiful-and-elegant-woman-gold-jewellery-necklace-photo.jpeg",
       "website" : "www.paharia_finance.com",
       "facebook" : "",
       "instagram" : "",
       "twitter" : "" 
-  },
+    },
     {
       "id" : "2",
       "user_id" : "1",
@@ -71,20 +74,23 @@ export default function CategoryDetails() {
       "shopname" : "Paharia Finanace",
       "description" : "Paharia Finance is a leading jewellery brand for selling and gold at scale.",
       "locations" : [
-          {
-              "address_id" : "1",
-              "address" : "pattamangalam Street, plot-52",
-              "city" : "Mayiladuthurai",
-              "pin-code" : "305801",
-              "state" : "Tamil Nadu"
-          }
-        ],
+        {
+          "address_id" : "1",
+          "address" : "pattamangalam Street, plot-52",
+          "city" : "Mayiladuthurai",
+          "pin-code" : "305801",
+          "state" : "Tamil Nadu"
+        }
+      ],
+      "categories" : [
+        "5", "10"
+      ],
       "thumbnail": "https://static.vecteezy.com/system/resources/previews/034/781/723/non_2x/ai-generated-beautiful-and-elegant-woman-gold-jewellery-necklace-photo.jpeg",
       "website" : "www.paharia_finance.com",
       "facebook" : "",
       "instagram" : "",
       "twitter" : "" 
-  },
+    },
     {
       "id" : "3",
       "user_id" : "1",
@@ -92,20 +98,23 @@ export default function CategoryDetails() {
       "shopname" : "Paharia Finanace",
       "description" : "Paharia Finance is a leading jewellery brand for selling and gold at scale.",
       "locations" : [
-          {
-              "address_id" : "1",
+        {
+          "address_id" : "1",
               "address" : "pattamangalam Street, plot-52",
               "city" : "Mayiladuthurai",
               "pin-code" : "305801",
               "state" : "Tamil Nadu"
-          }
+            }
+          ],
+      "categories" : [
+        "5", "10"
       ],
       "thumbnail": "https://static.vecteezy.com/system/resources/previews/034/781/723/non_2x/ai-generated-beautiful-and-elegant-woman-gold-jewellery-necklace-photo.jpeg",
       "website" : "www.paharia_finance.com",
       "facebook" : "",
       "instagram" : "",
       "twitter" : "" 
-  },
+    },
     {
       "id" : "4",
       "user_id" : "1",
@@ -114,12 +123,15 @@ export default function CategoryDetails() {
       "description" : "Paharia Finance is a leading jewellery brand for selling and gold at scale.",
       "locations" : [
           {
-              "address_id" : "1",
-              "address" : "pattamangalam Street, plot-52",
-              "city" : "Mayiladuthurai",
-              "pin-code" : "305801",
-              "state" : "Tamil Nadu"
+            "address_id" : "1",
+            "address" : "pattamangalam Street, plot-52",
+            "city" : "Mayiladuthurai",
+            "pin-code" : "305801",
+            "state" : "Tamil Nadu"
           }
+        ],
+      "categories" : [
+        "5", "10"
       ],
       "thumbnail": "https://static.vecteezy.com/system/resources/previews/034/781/723/non_2x/ai-generated-beautiful-and-elegant-woman-gold-jewellery-necklace-photo.jpeg",
       "website" : "www.paharia_finance.com",
@@ -142,6 +154,9 @@ export default function CategoryDetails() {
               "state" : "Tamil Nadu"
           }
       ],
+      "categories" : [
+        "10", "5"
+      ],
       "thumbnail": "https://static.vecteezy.com/system/resources/previews/034/781/723/non_2x/ai-generated-beautiful-and-elegant-woman-gold-jewellery-necklace-photo.jpeg",
       "website" : "www.paharia_finance.com",
       "facebook" : "",
@@ -154,6 +169,7 @@ export default function CategoryDetails() {
   const totalItems = 10;
   const status = "fulfilled";
   const categoryid = "5";
+  const Checkuser = true;
 //   const products = useSelector(selectAllProducts);
 //   const brands = useSelector(selectBrands);
 //   const categories = useSelector(selectCategories);
@@ -231,73 +247,73 @@ export default function CategoryDetails() {
       ></MobileFilter>
 
       <main className="mx-auto w-full px-4 sm:px-6 lg:px-8">
-        <div className="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-14">
-          <h1 className="font-serif text-2xl font-extrabold text-[#4e3629] py-5" >All Shops -</h1>
+      <h1 className="font-serif text-3xl font-extrabold text-[#4e3629] pt-5" >Choose Your Seller -</h1>
+      <div className="flex justify-end space-x-1 border-b border-gray-200 pb-6 pt-7 items-center">
 
-          <div className="flex items-center">
-            <Menu as="div" className="relative inline-block text-left">
-              <div>
-                <Menu.Button className="group inline-flex justify-center text-sm font-medium text-gray-700 hover:text-gray-900">
-                  Sort
-                  <ChevronDownIcon
-                    className="-mr-1 ml-1 h-5 w-5 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
-                    aria-hidden="true"
-                  />
-                </Menu.Button>
-              </div>
+        <div className="flex items-center">
+          <Menu as="div" className="relative inline-block text-left">
+            <div>
+              <Menu.Button className="group inline-flex justify-center text-sm font-medium text-gray-700 hover:text-gray-900">
+                Sort
+                <ChevronDownIcon
+                  className="-mr-1 ml-1 h-5 w-5 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
+                  aria-hidden="true"
+                />
+              </Menu.Button>
+            </div>
 
-              <Transition
-                as={Fragment}
-                enter="transition ease-out duration-100"
-                enterFrom="transform opacity-0 scale-95"
-                enterTo="transform opacity-100 scale-100"
-                leave="transition ease-in duration-75"
-                leaveFrom="transform opacity-100 scale-100"
-                leaveTo="transform opacity-0 scale-95"
-              >
-                <Menu.Items className="absolute right-0 z-10 mt-2 w-40 origin-top-right rounded-md shadow-2xl ring-1 ring-black ring-opacity-5 focus:outline-none">
-                  <div className="py-1">
-                    {sortOptions.map((option) => (
-                      <Menu.Item key={option.name}>
-                        {({ active }) => (
-                          <p
-                            onClick={(e) => handleSort(e, option)}
-                            className={classNames(
-                              option.current
-                                ? 'font-medium text-gray-900'
-                                : 'text-gray-500',
-                              active ? 'bg-gray-100' : '',
-                              'block px-4 py-2 text-sm'
-                            )}
-                          >
-                            {option.name}
-                          </p>
-                        )}
-                      </Menu.Item>
-                    ))}
-                  </div>
-                </Menu.Items>
-              </Transition>
-            </Menu>
-
-            <button
-              type="button"
-              className="-m-2 ml-5 p-2 text-gray-400 hover:text-gray-500 sm:ml-7"
+            <Transition
+              as={Fragment}
+              enter="transition ease-out duration-100"
+              enterFrom="transform opacity-0 scale-95"
+              enterTo="transform opacity-100 scale-100"
+              leave="transition ease-in duration-75"
+              leaveFrom="transform opacity-100 scale-100"
+              leaveTo="transform opacity-0 scale-95"
             >
-              <span className="sr-only">Reset</span>
-              <Squares2X2Icon className="h-5 w-5" aria-hidden="true" />
-            </button>
-            
-            <button
-              type="button"
-              className="-m-2 ml-4 p-2 text-gray-400 hover:text-gray-500 sm:ml-6 lg:hidden"
-              onClick={() => setMobileFiltersOpen(true)}
-            >
-              <span className="sr-only">Filters</span>
-              <FunnelIcon className="h-5 w-5" aria-hidden="true" />
-            </button>
-          </div>
+              <Menu.Items className="absolute right-0 z-10 mt-2 w-40 origin-top-right rounded-md shadow-2xl ring-1 ring-black bg-[#F5DEB3] ring-opacity-50 focus:outline-none">
+                <div className="py-1">
+                  {sortOptions.map((option) => (
+                    <Menu.Item key={option.name}>
+                      {({ active }) => (
+                        <p
+                          onClick={(e) => handleSort(e, option)}
+                          className={classNames(
+                            option.current
+                              ? 'font-medium text-gray-900'
+                              : 'text-gray-500',
+                            active ? 'bg-[#F5DEC9]' : '',
+                            'block px-4 py-2 text-sm'
+                          )}
+                        >
+                          {option.name}
+                        </p>
+                      )}
+                    </Menu.Item>
+                  ))}
+                </div>
+              </Menu.Items>
+            </Transition>
+          </Menu>
+
+          <button
+            type="button"
+            className="-m-2 ml-5 p-2 text-gray-700 hover:text-gray-900 sm:ml-7"
+          >
+            <span className="sr-only">Reset</span>
+            Reset
+          </button>
+          
+          <button
+            type="button"
+            className="-m-2 ml-4 p-2 text-gray-700 hover:text-gray-900 sm:ml-6 lg:hidden"
+            onClick={() => setMobileFiltersOpen(true)}
+          >
+            <span className="sr-only">Filters</span>
+            <FunnelIcon className="h-5 w-5" aria-hidden="true" />
+          </button>
         </div>
+      </div>
 
         <section aria-labelledby="shops-heading" className="pb-24 pt-6">
           <h2 id="shops-heading" className="sr-only">
@@ -313,22 +329,10 @@ export default function CategoryDetails() {
             {/* Shop Grid */}
             <div className="flex-1">
               <div className="grid grid-cols-1 gap-y-6 sm:gap-y-10">
-                <ShopGrid shops={shops} status={status} categoryid={categoryid}/>
+                <ShopGrid shops={shops} status={status} categoryid={categoryid} user={Checkuser}/>
               </div>
             </div>
           </div>
-
-          {/* <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
-            <DesktopFilter
-              handleFilter={handleFilter}
-              filters={filters}
-            ></DesktopFilter> */}
-            {/* shop grid */}
-            {/* <div className="lg:col-span-3">
-            <ShopGrid shops={shops} status={status}></ShopGrid>
-            </div> */}
-            {/* shop grid end */}
-          {/* </div> */}
         </section>
 
         {/* section of product and filters ends */}
@@ -354,7 +358,7 @@ return (
     <Transition.Root show={mobileFiltersOpen} as={Fragment}>
       <Dialog
         as="div"
-        className="relative z-40 lg:hidden"
+        className="relative z-10 lg:hidden"
         onClose={setMobileFiltersOpen}
       >
         <Transition.Child
@@ -369,7 +373,7 @@ return (
           <div className="fixed inset-0 bg-black bg-opacity-25" />
         </Transition.Child>
 
-        <div className="fixed inset-0 z-40 flex">
+        <div className="fixed inset-0 z-10 flex">
           <Transition.Child
             as={Fragment}
             enter="transition ease-in-out duration-300 transform"
@@ -379,9 +383,9 @@ return (
             leaveFrom="translate-x-0"
             leaveTo="translate-x-full"
           >
-            <Dialog.Panel className="relative ml-auto flex h-full w-full max-w-xs flex-col overflow-y-auto py-4 pb-12 shadow-xl">
+            <Dialog.Panel className="relative ml-auto flex h-full w-full bg-[#F5DEB3] max-w-xs flex-col overflow-y-auto py-4 pb-12 shadow-xl">
               <div className="flex items-center justify-between px-4">
-                <h2 className="text-lg font-medium text-gray-900">Filters</h2>
+                <h2 className="text-lg text-center font-medium text-gray-900">All Filters</h2>
                 <button
                   type="button"
                   className="-mr-2 flex h-10 w-10 items-center justify-center rounded-md p-2 text-gray-400"
@@ -393,7 +397,7 @@ return (
               </div>
 
               {/* Filters */}
-              <form className="mt-4 border-t border-gray-200">
+              <form className="mt-4 border-t border-gray-200 ">
                 {filters.map((section) => (
                   <Disclosure
                     as="div"
@@ -403,7 +407,7 @@ return (
                     {({ open }) => (
                       <>
                         <h3 className="-mx-2 -my-3 flow-root">
-                          <Disclosure.Button className="flex w-full items-center justify-between  px-2 py-3 text-gray-400 hover:text-gray-500">
+                          <Disclosure.Button className="flex w-full items-center justify-between  px-2 py-3 text-gray-600 hover:text-gray-900">
                             <span className="font-medium text-gray-900">
                               {section.name}
                             </span>
@@ -442,7 +446,7 @@ return (
                                 />
                                 <label
                                   htmlFor={`filter-mobile-${section.id}-${optionIdx}`}
-                                  className="ml-3 min-w-0 flex-1 text-gray-500"
+                                  className="ml-3 min-w-0 flex-1 text-gray-900"
                                 >
                                   {option.label}
                                 </label>
@@ -521,7 +525,13 @@ function DesktopFilter({ handleFilter, filters }) {
 }
 
 
-function ShopGrid({ shops, status, categoryid }) {
+function ShopGrid({ shops, status, categoryid, user}) {
+  const handleAbout = (e, shopid) => {
+    // open a dialog box with all Shop Details
+  };
+  const handleAddToFavourites = (e, shopid) => {
+    // if already in favourite then remove else add it.
+  };
   return (
     <div className="">
       <div className="mx-auto max-w-2xl px-4 py-0 sm:px-6 sm:py-0 lg:max-w-7xl lg:px-8">
@@ -539,50 +549,103 @@ function ShopGrid({ shops, status, categoryid }) {
             />
           ) : null}
           {shops.map((shop) => (
-            <Link to={`/shop/${shop.id}?categoryid=${categoryid}`} key={shop.id}>
-              <div className="group relative border-solid border-2 p-2 border-gray-200">
-                <div className="min-h-60 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-60">
-                  <img
-                    src={shop.thumbnail}
-                    alt={shop.title}
-                    className="h-full w-full object-cover object-center lg:h-full lg:w-full"
-                    />
-                </div>
-                <div className="mt-4 flex justify-between">
-                  <div>
-                    <h3 className="text-sm text-gray-700">
-                      <div href={shop.thumbnail}>
-                        <span aria-hidden="true" className="absolute inset-0" />
-                        {shop.title}
+          
+              <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                  <div className="flex justify-end px-4 pt-4">
+                    <Menu as="div" className="relative inline-block text-left z-10">
+                      <div>
+                        <Menu.Button className="group inline-flex justify-center text-sm font-medium text-white hover:text-gray-900">
+                          <span className="sr-only">Open dropdown</span>
+                            <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 3">
+                                <path d="M2 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm6.041 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM14 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z"/>
+                            </svg>
+                        </Menu.Button>
                       </div>
-                    </h3>
-                    <p className="mt-1 text-sm text-gray-500">
-                      <StarIcon className="w-6 h-6 inline"></StarIcon>
-                      <span className=" align-bottom">{shop.rating}</span>
-                    </p>
+
+                      <Transition
+                        as={Fragment}
+                        enter="transition ease-out duration-100"
+                        enterFrom="transform opacity-0 scale-95"
+                        enterTo="transform opacity-100 scale-100"
+                        leave="transition ease-in duration-75"
+                        leaveFrom="transform opacity-100 scale-100"
+                        leaveTo="transform opacity-0 scale-95"
+                      >
+                        <Menu.Items className="absolute right-0 z-10 mt-2 w-40 origin-top-right rounded-md shadow-2xl ring-1 ring-black ring-opacity-5 bg-[#F5DEB3] bg-opacity-90 focus:outline-none">
+                          <div className="py-1">
+                            {
+                              <Menu.Item key="about seller">
+                                {({active}) => (
+                                  <p 
+                                    onClick={(e) => handleAbout(e, shop.id)}
+                                    className={classNames(
+                                      'font-medium text-gray-900',
+                                      active ? 'bg-gray-100' : '',
+                                      'block px-4 py-2 text-sm'
+                                    )}
+                                  >
+                                    About Seller
+                                  </p>
+                                )}
+                              </Menu.Item>
+                            }
+                            {
+                              (user) ? (
+                                <Menu.Item key="add to favorites">
+                                  {({active}) => (
+                                    <p 
+                                      onClick={(e) => handleAddToFavourites(e, shop.id)}
+                                      className={classNames(
+                                        'font-medium text-gray-900',
+                                        active ? 'bg-gray-100' : '',
+                                        'block px-4 py-2 text-sm'
+                                      )}
+                                    >
+                                      Add To Favourites
+                                    </p>
+                                  )}
+                                </Menu.Item>
+                              ):(
+                                null
+                              )
+                            }
+                            {/* {DetailOptions.map((option) => (
+                              <Menu.Item key={option.name}>
+                                {({ active }) => (
+                                  <p
+                                    onClick={(e) => handleContext(e, option)}
+                                    className={classNames(
+                                      option.current
+                                        ? 'font-medium text-gray-900'
+                                        : 'text-gray-500',
+                                      active ? 'bg-gray-100' : '',
+                                      'block px-4 py-2 text-sm'
+                                    )}
+                                  >
+                                    {option.name}
+                                  </p>
+                                )}
+                              </Menu.Item>
+                            ))} */}
+                          </div>
+                        </Menu.Items>
+                      </Transition>
+                    </Menu>
                   </div>
-                  <div>
-                    <p className="text-sm block font-medium text-gray-900">
-                      {/* ${discountedPrice(shop)} */}
-                    </p>
-                    <p className="text-sm block line-through font-medium text-gray-400">
-                      ${shop.price}
-                    </p>
+                  <div className="flex flex-col items-center pb-10">
+                      <img className="w-24 h-24 mb-3 rounded-full shadow-lg" src={shop.logo} alt={shop.shopname}/>
+                      <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white">{shop.shopname}</h5>
+                      <span className="text-sm text-gray-500 dark:text-gray-400">{`${shop.locations[0].city}, ${shop.locations[0].state}`}</span>
+                      <div className="flex mt-4 sm:mt-6">
+                          <Link to={`/shop/${shop.id}?categoryid=${categoryid}`} key={shop.id}>
+                            <div className="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                              {/* {`View All ${shop.categories[indexOf(categoryid)].category_id} Designs`} */}
+                              {`View All ${shop.categories[0]} Designs`}
+                            </div>
+                          </Link>
+                      </div>
                   </div>
-                </div>
-                {shop.deleted && (
-                  <div>
-                    <p className="text-sm text-red-400">shop deleted</p>
-                  </div>
-                )}
-                {shop.stock <= 0 && (
-                  <div>
-                    <p className="text-sm text-red-400">out of stock</p>
-                  </div>
-                )}
-                {/* will not be needed when backend is implemented */}
               </div>
-            </Link>
           ))}
         </div>
       </div>

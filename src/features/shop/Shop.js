@@ -12,20 +12,17 @@ import { useSelector, useDispatch } from 'react-redux';
 //   selectTotalItems,
 // } from '../productSlice';
 import { Dialog, Disclosure, Menu, Transition } from '@headlessui/react';
-import { XMarkIcon } from '@heroicons/react/24/outline';
-import {
-  ChevronLeftIcon,
-  ChevronRightIcon,
-  StarIcon,
-} from '@heroicons/react/20/solid';
-import { Link } from 'react-router-dom';
+import { XMarkIcon, ShoppingCartIcon, } from '@heroicons/react/24/outline';
 import {
   ChevronDownIcon,
   FunnelIcon,
   MinusIcon,
   PlusIcon,
+  InformationCircleIcon,
   Squares2X2Icon,
+  StarIcon,
 } from '@heroicons/react/20/solid';
+import { Link } from 'react-router-dom';
 // import { ITEMS_PER_PAGE, discountedPrice } from '../../../app/constants';
 // import Pagination from '../../common/Pagination';
 import { Grid } from 'react-loader-spinner';
@@ -48,10 +45,11 @@ export default function Shop() {
       "category_id" : "1",
       "shop_id" :"1",
       "user_id" :"1",
+      "name" : "Product 1",
       "images" : [
-          "df",
-          "dlfl",
-          "dfdf"
+        "https://static.vecteezy.com/system/resources/previews/034/781/723/non_2x/ai-generated-beautiful-and-elegant-woman-gold-jewellery-necklace-photo.jpeg",
+        "https://static.vecteezy.com/system/resources/previews/038/000/334/non_2x/ai-generated-beautiful-gold-ring-with-a-diamond-in-the-shape-of-a-heart-photo.jpg",
+        "dfdf"
       ],
       "purity" : "92",
       "making_touch" : "5",
@@ -66,10 +64,11 @@ export default function Shop() {
       "shop_id" :"1",
       "user_id" :"1",
       "images" : [
-          "df",
-          "dlfl",
-          "dfdf"
+        "df",
+        "dlfl",
+        "dfdf"
       ],
+      "name" : "Product 1",
       "purity" : "92",
       "making_touch" : "5",
       "total_weight" : "5",
@@ -83,10 +82,11 @@ export default function Shop() {
       "shop_id" :"1",
       "user_id" :"1",
       "images" : [
-          "df",
-          "dlfl",
-          "dfdf"
+        "https://static.vecteezy.com/system/resources/previews/034/781/723/non_2x/ai-generated-beautiful-and-elegant-woman-gold-jewellery-necklace-photo.jpeg",
+        "https://static.vecteezy.com/system/resources/previews/038/000/334/non_2x/ai-generated-beautiful-gold-ring-with-a-diamond-in-the-shape-of-a-heart-photo.jpg",
+        "dfdf"
       ],
+      "name" : "Product 1",
       "purity" : "92",
       "making_touch" : "5",
       "total_weight" : "5",
@@ -100,10 +100,11 @@ export default function Shop() {
       "shop_id" :"1",
       "user_id" :"1",
       "images" : [
-          "df",
-          "dlfl",
-          "dfdf"
+        "df",
+        "dlfl",
+        "dfdf"
       ],
+      "name" : "Product 1",
       "purity" : "92",
       "making_touch" : "5",
       "total_weight" : "5",
@@ -117,11 +118,14 @@ export default function Shop() {
   const states = [{label : 'Tamil Nadu'}, {label : 'Karnataka'}];
   const totalItems = 10;
   const status = "fulfilled";
-//   const products = useSelector(selectAllProducts);
-//   const brands = useSelector(selectBrands);
-//   const categories = useSelector(selectCategories);
-//   const totalItems = useSelector(selectTotalItems);
-//   const status = useSelector(selectProductListStatus);
+  const Checkuser = true;
+  const categoryid = 5;
+  const SellerInfo = "Paharia Finance is the leading Jewllery Shop in the World."
+  //   const products = useSelector(selectAllProducts);
+  //   const brands = useSelector(selectBrands);
+  //   const categories = useSelector(selectCategories);
+  //   const totalItems = useSelector(selectTotalItems);
+  //   const status = useSelector(selectProductListStatus);
   const filters = [
     {
       id: 'city',
@@ -138,6 +142,7 @@ export default function Shop() {
   const [filter, setFilter] = useState({});
   const [sort, setSort] = useState({});
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
+  const [aboutSellerOpen, setAboutSellerOpen] = useState(false);
   const [page, setPage] = useState(1);
 
   const handleFilter = (e, section, option) => {
@@ -186,6 +191,12 @@ export default function Shop() {
   return (
     <div>
     <div>
+
+      <AboutSeller
+        SellerInfo={SellerInfo}
+        setAboutSellerOpen={setAboutSellerOpen}
+      ></AboutSeller>
+
       <MobileFilter
         handleFilter={handleFilter}
         mobileFiltersOpen={mobileFiltersOpen}
@@ -194,106 +205,106 @@ export default function Shop() {
       ></MobileFilter>
 
       <main className="mx-auto w-full px-4 sm:px-6 lg:px-8">
-        <div className="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-14">
-          <h1 className="text-4xl font-bold tracking-tight text-gray-900">
-            All Products
-          </h1>
 
-          <div className="flex items-center">
-            <Menu as="div" className="relative inline-block text-left">
-              <div>
-                <Menu.Button className="group inline-flex justify-center text-sm font-medium text-gray-700 hover:text-gray-900">
-                  Sort
-                  <ChevronDownIcon
-                    className="-mr-1 ml-1 h-5 w-5 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
-                    aria-hidden="true"
-                  />
-                </Menu.Button>
-              </div>
+        <h1 className="font-serif text-3xl font-extrabold text-[#4e3629] pt-5" >Choose Your Design -</h1>
+        <div className="flex justify-end space-x-1 border-b border-gray-200 pb-6 pt-7 items-center">
+          
+          <Menu as="div" className="relative inline-block text-left">
+            <div>
+              <Menu.Button className="group inline-flex justify-center text-sm font-medium text-gray-700 hover:text-gray-900">
+                Sort
+                <ChevronDownIcon
+                  className="-mr-1 ml-1 h-5 w-5 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
+                  aria-hidden="true"
+                />
+              </Menu.Button>
+            </div>
 
-              <Transition
-                as={Fragment}
-                enter="transition ease-out duration-100"
-                enterFrom="transform opacity-0 scale-95"
-                enterTo="transform opacity-100 scale-100"
-                leave="transition ease-in duration-75"
-                leaveFrom="transform opacity-100 scale-100"
-                leaveTo="transform opacity-0 scale-95"
-              >
-                <Menu.Items className="absolute right-0 z-10 mt-2 w-40 origin-top-right rounded-md shadow-2xl ring-1 ring-black ring-opacity-5 focus:outline-none">
-                  <div className="py-1">
-                    {sortOptions.map((option) => (
-                      <Menu.Item key={option.name}>
-                        {({ active }) => (
-                          <p
-                            onClick={(e) => handleSort(e, option)}
-                            className={classNames(
-                              option.current
-                                ? 'font-medium text-gray-900'
-                                : 'text-gray-500',
-                              active ? 'bg-gray-100' : '',
-                              'block px-4 py-2 text-sm'
-                            )}
-                          >
-                            {option.name}
-                          </p>
-                        )}
-                      </Menu.Item>
-                    ))}
-                  </div>
-                </Menu.Items>
-              </Transition>
-            </Menu>
-
-            <button
-              type="button"
-              className="-m-2 ml-5 p-2 text-gray-400 hover:text-gray-500 sm:ml-7"
+            <Transition
+              as={Fragment}
+              enter="transition ease-out duration-100"
+              enterFrom="transform opacity-0 scale-95"
+              enterTo="transform opacity-100 scale-100"
+              leave="transition ease-in duration-75"
+              leaveFrom="transform opacity-100 scale-100"
+              leaveTo="transform opacity-0 scale-95"
             >
-              <span className="sr-only">Reset</span>
-              <Squares2X2Icon className="h-5 w-5" aria-hidden="true" />
-            </button>
-            
-            <button
-              type="button"
-              className="-m-2 ml-4 p-2 text-gray-400 hover:text-gray-500 sm:ml-6 lg:hidden"
-              onClick={() => setMobileFiltersOpen(true)}
-            >
-              <span className="sr-only">Filters</span>
-              <FunnelIcon className="h-5 w-5" aria-hidden="true" />
-            </button>
-          </div>
+              <Menu.Items className="absolute right-0 z-10 mt-2 w-40 origin-top-right rounded-md shadow-2xl ring-1 ring-black bg-[#F5DEB3] ring-opacity-50 focus:outline-none">
+                <div className="py-1">
+                  {sortOptions.map((option) => (
+                    <Menu.Item key={option.name}>
+                      {({ active }) => (
+                        <p
+                          onClick={(e) => handleSort(e, option)}
+                          className={classNames(
+                            option.current
+                              ? 'font-medium text-gray-900'
+                              : 'text-gray-500',
+                            active ? 'bg-[#F5DEC9]' : '',
+                            'block px-4 py-2 text-sm'
+                          )}
+                        >
+                          {option.name}
+                        </p>
+                      )}
+                    </Menu.Item>
+                  ))}
+                </div>
+              </Menu.Items>
+            </Transition>
+          </Menu>
+
+          <button
+            type="button"
+            className="-m-2 ml-4 p-2 text-gray-700 hover:text-gray-900 sm:ml-6 lg:hidden"
+            onClick={() => setMobileFiltersOpen(true)}
+          >
+            <span className="sr-only">Filters</span>
+            <FunnelIcon className="h-5 w-5" aria-hidden="true" />
+          </button>
+          
+          <button
+            type="button"
+            className="-m-2 ml-4 p-2 text-gray-700 hover:text-gray-900 sm:ml-6 lg:hidden"
+            onClick={() => setAboutSellerOpen(true)}
+          >
+            <span className="sr-only">About Seller</span>
+            <InformationCircleIcon className="h-5 w-5" aria-hidden="true" />
+          </button>
+
+          <button
+            type="button"
+            className="-m-2 ml-5 p-2 text-gray-700 hover:text-gray-900 sm:ml-7"
+          >
+            <span className="sr-only">Reset</span>
+            Reset
+          </button>
+          
         </div>
+        
 
-        <section aria-labelledby="products-heading" className="pb-24 pt-6">
-          <h2 id="products-heading" className="sr-only">
-            Products
+        <section aria-labelledby="shops-heading" className="pb-24 pt-6">
+          <h2 id="shops-heading" className="sr-only">
+            Shops
           </h2>
 
           <div className="flex flex-col lg:flex-row gap-y-8 lg:gap-x-8">
             {/* Desktop Filter */}
             <div className="hidden lg:block w-1/4 lg:w-1/5">
               <DesktopFilter handleFilter={handleFilter} filters={filters} />
+              <div>
+                <h2 className="font-medium text-gray-900 w-fit mx-auto">About Seller</h2>
+                {/* Mention all the details about the Seller overhere. */}
+              </div>
             </div>
 
-            {/* Product Grid */}
+            {/* Shop Grid */}
             <div className="flex-1">
               <div className="grid grid-cols-1 gap-y-6 sm:gap-y-10">
-                <ProductGrid products={products} status={status} />
+                <ProductGrid products={products} status={status} categoryid={categoryid} user={Checkuser}/>
               </div>
             </div>
           </div>
-
-          {/* <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
-            <DesktopFilter
-              handleFilter={handleFilter}
-              filters={filters}
-            ></DesktopFilter> */}
-            {/* product grid */}
-            {/* <div className="lg:col-span-3">
-            <ProductGrid products={products} status={status}></ProductGrid>
-            </div> */}
-            {/* product grid end */}
-          {/* </div> */}
         </section>
 
         {/* section of product and filters ends */}
@@ -309,6 +320,11 @@ export default function Shop() {
   );
 }
 
+function AboutSeller({SellerInfo, setAboutSellerOpen}){
+  // create a panel and show information about the seller.
+
+}
+
 function MobileFilter({
   mobileFiltersOpen,
   setMobileFiltersOpen,
@@ -319,7 +335,7 @@ return (
     <Transition.Root show={mobileFiltersOpen} as={Fragment}>
       <Dialog
         as="div"
-        className="relative z-40 lg:hidden"
+        className="relative z-10 lg:hidden"
         onClose={setMobileFiltersOpen}
       >
         <Transition.Child
@@ -334,7 +350,7 @@ return (
           <div className="fixed inset-0 bg-black bg-opacity-25" />
         </Transition.Child>
 
-        <div className="fixed inset-0 z-40 flex">
+        <div className="fixed inset-0 z-10 flex">
           <Transition.Child
             as={Fragment}
             enter="transition ease-in-out duration-300 transform"
@@ -344,9 +360,9 @@ return (
             leaveFrom="translate-x-0"
             leaveTo="translate-x-full"
           >
-            <Dialog.Panel className="relative ml-auto flex h-full w-full max-w-xs flex-col overflow-y-auto py-4 pb-12 shadow-xl">
+            <Dialog.Panel className="relative ml-auto flex h-full w-full bg-[#F5DEB3] max-w-xs flex-col overflow-y-auto py-4 pb-12 shadow-xl">
               <div className="flex items-center justify-between px-4">
-                <h2 className="text-lg font-medium text-gray-900">Filters</h2>
+                <h2 className="text-lg text-center font-medium text-gray-900">All Filters</h2>
                 <button
                   type="button"
                   className="-mr-2 flex h-10 w-10 items-center justify-center rounded-md p-2 text-gray-400"
@@ -358,7 +374,7 @@ return (
               </div>
 
               {/* Filters */}
-              <form className="mt-4 border-t border-gray-200">
+              <form className="mt-4 border-t border-gray-200 ">
                 {filters.map((section) => (
                   <Disclosure
                     as="div"
@@ -368,7 +384,7 @@ return (
                     {({ open }) => (
                       <>
                         <h3 className="-mx-2 -my-3 flow-root">
-                          <Disclosure.Button className="flex w-full items-center justify-between  px-2 py-3 text-gray-400 hover:text-gray-500">
+                          <Disclosure.Button className="flex w-full items-center justify-between  px-2 py-3 text-gray-600 hover:text-gray-900">
                             <span className="font-medium text-gray-900">
                               {section.name}
                             </span>
@@ -407,7 +423,7 @@ return (
                                 />
                                 <label
                                   htmlFor={`filter-mobile-${section.id}-${optionIdx}`}
-                                  className="ml-3 min-w-0 flex-1 text-gray-500"
+                                  className="ml-3 min-w-0 flex-1 text-gray-900"
                                 >
                                   {option.label}
                                 </label>
@@ -486,7 +502,7 @@ function DesktopFilter({ handleFilter, filters }) {
 }
 
 
-function ProductGrid({ products, status }) {
+function ProductGrid({ products, status, categoryid, user }) {
   return (
     <div className="">
       <div className="mx-auto max-w-2xl px-4 py-0 sm:px-6 sm:py-0 lg:max-w-7xl lg:px-8">
@@ -504,50 +520,65 @@ function ProductGrid({ products, status }) {
             />
           ) : null}
           {products.map((product) => (
-            <Link to={`/product/${product.id}`} key={product.id}>
-              <div className="group relative border-solid border-2 p-2 border-gray-200">
-                <div className="min-h-60 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-60">
-                  <img
-                    src={product.thumbnail}
-                    alt={product.title}
-                    className="h-full w-full object-cover object-center lg:h-full lg:w-full"
-                    />
-                </div>
-                <div className="mt-4 flex justify-between">
-                  <div>
-                    <h3 className="text-sm text-gray-700">
-                      <div href={product.thumbnail}>
-                        <span aria-hidden="true" className="absolute inset-0" />
-                        {product.title}
-                      </div>
-                    </h3>
-                    <p className="mt-1 text-sm text-gray-500">
-                      <StarIcon className="w-6 h-6 inline"></StarIcon>
-                      <span className=" align-bottom">{product.rating}</span>
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-sm block font-medium text-gray-900">
-                      {/* ${discountedPrice(product)} */}
-                    </p>
-                    <p className="text-sm block line-through font-medium text-gray-400">
-                      ${product.price}
-                    </p>
-                  </div>
-                </div>
-                {product.deleted && (
-                  <div>
-                    <p className="text-sm text-red-400">product deleted</p>
-                  </div>
-                )}
-                {product.stock <= 0 && (
-                  <div>
-                    <p className="text-sm text-red-400">out of stock</p>
-                  </div>
-                )}
-                {/* will not be needed when backend is implemented */}
+            <div className="relative border-solid border-2 p-2 border-gray-800">
+              <div className=" group aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-800 lg:aspect-none lg:h-60  relative">
+                <img
+                  src={product.images[0]}
+                  alt={product.title}
+                  className="h-full w-full object-cover object-center lg:h-full lg:w-full transition-opacity duration-300"
+                />
+                <img
+                  src={product.images[1]} // Assuming you have a second image
+                  alt={product.title}
+                  className="absolute top-0 right-0 h-full w-full object-cover object-center lg:h-full lg:w-full opacity-0 transition-all duration-300 transform translate-x-full 
+                  sm:group-[.active]:opacity-100 sm:group-[.active]:translate-x-0 lg:group-hover:opacity-100 lg:group-hover:translate-x-0"
+                />
               </div>
-            </Link>
+
+              <div className="mt-4 justify-between">
+                <div>
+                  <h2 className="text-lg text-gray-700 text-center font-extrabold">
+                    <span aria-hidden="true" className="absolute" />
+                    {product.name} 
+                  </h2>
+                </div>
+                <div className="grid grid-cols-2 gap-y-1 sm:gap-y-2 mt-3 px-8">
+                  <div className="grid grid-cols-2 col-span-2 -mx-4">
+                    <div className="text-right pr-4">Purity(%)</div>
+                    <div className="text-left pl-4">Data 2</div>
+                    <div className="text-right pr-4">Net_Weight(gms)</div>
+                    <div className="text-left pl-4">Data 2</div>
+                    <div className="text-right pr-4">Making_Charge(%)</div>
+                    <div className="text-left pl-4">Data 2</div>
+                  </div>
+                </div>
+              </div>
+            
+              <div className="flex mt-4 sm:mt-6 w-full">
+                <Link 
+                  to={`/product/${product.id}`} 
+                  key={product.id}
+                  className="w-3/4 mr-2"
+                >
+                  <div className="flex items-center justify-center w-full px-4 py-2 text-sm font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    {`More Details`}
+                  </div>
+                </Link>
+                <button
+                  type="button"
+                  className="w-1/4 flex items-center justify-center rounded-lg bg-gray-800 p-2 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                  // onClick={(e) => handleCart(e, product.id)}
+                >
+                  <span className="sr-only">Add To Cart</span>
+                  <ShoppingCartIcon
+                    className="h-6 w-6"
+                    aria-hidden="true"
+                  />
+                </button>
+              </div>
+
+              </div>
+            
           ))}
         </div>
       </div>
