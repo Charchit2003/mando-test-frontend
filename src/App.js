@@ -4,14 +4,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { positions, Provider } from 'react-alert';
 import AlertTemplate from 'react-alert-template-basic';
 
-import CategoryPage from './pages/CategoryPage';
-import CategoryDetailsPage from './pages/CategoryDetailsPage';
-import ShopPage from './pages/ShopPage';
-import ProductDetailPage from './pages/ProductDetailPage';
+import HomePage from './pages/HomePage';
+import SearchPage from './pages/SearchPage';
+import logo from './logo.svg';
+// import CategoryPage from './pages/CategoryPage';
+
 import PageNotFound from './pages/404';
 
-import logo from './logo.svg';
-import ProductDetail from './features/product/ProductDetail';
+
 
 const options = {
   timeout: 5000,
@@ -22,25 +22,13 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: (
-        <CategoryPage></CategoryPage>
+        <HomePage></HomePage>
     ),
   },
   {
-    path: '/category-detail/:id',
+    path: '/search',
     element: (
-        <CategoryDetailsPage></CategoryDetailsPage>
-    ),
-  },
-  {
-    path: '/shop/:id',
-    element: (
-        <ShopPage></ShopPage>
-    ),
-  },
-  {
-    path: '/product/:id',
-    element: (
-        <ProductDetailPage></ProductDetailPage>
+        <SearchPage></SearchPage>
     ),
   },
   {
@@ -54,7 +42,7 @@ const router = createBrowserRouter([
 function App() {
   return (
     < >
-    <div className='bg-[#f7e7ce] w-full h-full'>
+    <div className=''>
       {/* <Provider template={AlertTemplate} {...options}> */}
           <RouterProvider router={router} />
       {/* </Provider> */}
