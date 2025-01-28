@@ -2,14 +2,6 @@
 
 This project demonstrates how to implement a search feature in a React application using Redux for state management. The search functionality is accessible via the `/search` path.
 
-## Table of Contents
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Folder Structure](#folder-structure)
-- [Technologies Used](#technologies-used)
-- [License](#license)
-
 ## Installation
 
 1. **Clone the repository:**
